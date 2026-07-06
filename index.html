@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griselda y Gustavo - Hogar, Ocio y Más</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        customBlue: '#051126',   /* Azul oscuro de la cabecera original */
+                        customYellow: '#FFC800', /* Amarillo de los botones y acentos */
+                        whatsappGreen: '#25D366' /* Verde oficial de WhatsApp */
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+    <div class="bg-customBlue text-gray-400 text-xs py-2 px-4 border-b border-gray-800 hidden md:flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-customYellow"></i>
+            <span>Zona Oeste, Buenos Aires, Argentina</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span>Seguinos en</span>
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+    </div>
+
+    <header class="bg-customBlue text-white py-4 px-4 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <div class="flex items-center gap-3">
+                <div class="bg-customYellow text-customBlue p-2.5 rounded-lg text-2xl font-black shadow">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-black tracking-wider leading-none text-customYellow uppercase">Griselda y Gustavo</h1>
+                    <span class="text-[10px] text-gray-400 tracking-widest uppercase">Hogar, Ocio y Más</span>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 flex">
+                <input type="text" id="buscador" oninput="buscarProductos()" placeholder="Buscar productos por nombre..." class="w-full px-4 py-2.5 rounded-l-lg text-gray-800 focus:outline-none text-sm">
+                <button class="bg-customYellow text-customBlue px-6 rounded-r-lg font-bold hover:bg-yellow-500 transition">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <div class="flex gap-6 text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-customYellow text-lg"></i>
+                    <div>
+                        <p class="text-[11px] text-gray-400 leading-none">Teléfono</p>
+                        <p class="font-bold">11 1234 5678</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="https://wa.me/5491162567009" target="_blank" class="flex items-center gap-2 hover:opacity-90">
+                        <i class="fa-brands fa-whatsapp text-whatsappGreen text-xl"></i>
+                        <div>
+                            <p class="text-[11px] text-gray-400 leading-none">WhatsApp</p>
+                            <p class="font-bold">11 6256 7009</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-customBlue text-white border-t border-gray-800 text-sm font-semibold hidden md:block">
+        <div class="max-w-7xl mx-auto flex items-center">
+            <div class="bg-customYellow text-customBlue px-6 py-3 flex items-center gap-3 cursor-pointer hover:bg-yellow-500 transition">
+                <i class="fa-solid fa-bars"></i>
+                <span>CATEGORÍAS</span>
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+            </div>
+            <div class="flex gap-8 px-8">
+                <a href="#" class="text-customYellow hover:text-customYellow transition">Inicio</a>
+                <a href="#" class="hover:text-customYellow transition">Nosotros</a>
+                <a href="#catalogo-seccion" class="hover:text-customYellow transition">Catálogo</a>
+                <a href="#" class="hover:text-customYellow transition">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-customBlue to-slate-900 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+            <div class="space-y-6">
+                <h2 class="text-4xl md:text-5xl font-black leading-tight">
+                    Todo lo que necesitás, <br>
+                    <span class="text-customYellow">en un solo lugar</span>
+                </h2>
+                <p class="text-gray-300 text-base md:text-lg max-w-md">
+                    Electrodomésticos, juegos, álbumes, figuritas y mucho más al mejor precio de Zona Oeste.
+                </p>
+                <a href="#catalogo-seccion" class="inline-block bg-customYellow text-customBlue font-extrabold px-8 py-3.5 rounded-lg shadow-lg hover:bg-yellow-500 transition text-sm uppercase tracking-wider">
+                    Ver Catálogo
+                </a>
+            </div>
+            <div class="hidden md:flex justify-center items-center relative">
+                <div class="w-72 h-72 bg-slate-800 rounded-full opacity-20 absolute"></div>
+                <i class="fa-solid fa-store text-[180px] text-gray-700 relative z-10"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto py-12 px-4" id="catalogo-seccion">
+        <h3 class="text-center text-xl font-bold mb-8 uppercase tracking-wider text-gray-700">Explorá nuestras categorías</h3>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 mb-12">
+            <button onclick="filtrarCategoria('todos')" id="btn-todos" class="cat-btn bg-customYellow text-customBlue p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-customYellow transition">
+                <div class="text-2xl mb-2"><i class="fa-solid fa-border-all"></i></div>
+                <span>Mostrar Todo</span>
+            </button>
+            <button onclick="filtrarCategoria('electro')" class="cat-btn bg-white text-slate-700 p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
+                <div class="text-2xl mb-2 text-blue-600"><i class="fa-solid fa-plug"></i></div>
+                <span>Electrodomésticos</span>
+            </button>
+            <button onclick="filtrarCategoria('juegos')" class="cat-btn bg-white text-slate-700 p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
+                <div class="text-2xl mb-2 text-purple-600"><i class="fa-solid fa-dice-d20"></i></div>
+                <span>Juegos de Mesa</span>
+            </button>
+            <button onclick="filtrarCategoria('albumes')" class="cat-btn bg-white text-slate-700 p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
+                <div class="text-2xl mb-2 text-emerald-600"><i class="fa-solid fa-book-open-reader"></i></div>
+                <span>Álbumes y Figuritas</span>
+            </button>
+            <button onclick="filtrarCategoria('hogar')" class="cat-btn bg-white text-slate-700 p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
+                <div class="text-2xl mb-2 text-amber-600"><i class="fa-solid fa-kitchen-set"></i></div>
+                <span>Hogar y Cocina</span>
+            </button>
+        </div>
+
+        <div id="mensaje-estado" class="text-center text-gray-500 font-medium py-8">Cargando catálogo en vivo...</div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 id" id="contenedor-productos">
+            </div>
+    </section>
+
+    <section class="bg-slate-200 py-8 px-4 text-slate-700">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="flex flex-col items-center p-4">
+                <i class="fa-solid fa-truck text-customBlue text-3xl mb-2"></i>
+                <h5 class="font-bold text-sm">Envíos en Zona Oeste</h5>
+                <p class="text-xs text-gray-500 mt-1">Coordinamos la entrega de forma directa y segura.</p>
+            </div>
+            <div class="flex flex-col items-center p-4">
+                <i class="fa-solid fa-credit-card text-customBlue text-3xl mb-2"></i>
+                <h5 class="font-bold text-sm">Medios de Pago</h5>
+                <p class="text-xs text-gray-500 mt-1">Efectivo, Transferencia o Cuenta DNI.</p>
+            </div>
+            <div class="flex flex-col items-center p-4">
+                <i class="fa-solid fa-comments text-customBlue text-3xl mb-2"></i>
+                <h5 class="font-bold text-sm">Atención por sus Dueños</h5>
+                <p class="text-xs text-gray-500 mt-1">Griselda y Gustavo te responden al instante.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-customBlue text-gray-400 py-12 px-4 text-xs">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="space-y-3">
+                <div class="flex items-center gap-2 text-white text-sm font-bold">
+                    <i class="fa-solid fa-bag-shopping text-customYellow"></i> GRISELDA Y GUSTAVO
+                </div>
+                <p class="leading-relaxed">Tu tienda de confianza en Zona Oeste. Variedad, excelentes precios y la mejor atención de barrio.</p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-xs">Contactanos</h5>
+                <ul class="space-y-2">
+                    <li><i class="fa-solid fa-phone mr-2 text-customYellow"></i> 11 1234 5678</li>
+                    <li><i class="fa-brands fa-whatsapp mr-2 text-whatsappGreen"></i> 11 6256 7009</li>
+                    <li><i class="fa-solid fa-location-dot mr-2 text-customYellow"></i> Zona Oeste, Buenos Aires</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-xs">Seguinos</h5>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a></li>
+                    <li><a href="#" class="hover:text-white"><i class="fa-brands fa-facebook mr-2"></i> Facebook</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-xs">Información</h5>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white">Sobre nosotros</a></li>
+                    <li><a href="#" class="hover:text-white">Preguntas frecuentes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto text-center mt-12 pt-4 border-t border-gray-800 text-gray-500">
+            &copy; 2026 Griselda y Gustavo - Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        // Enlace CSV real proveído por el usuario
+        const urlPlanillaCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRpIQHSkMBUWIKb9yqqwNqoSsCh-J-gAq8EYEpicrFRadWv_OAxg4k1Wi1undxOp6E6hdMQdT-W6U6i/pub?output=csv";
+        
+        let listaProductosGlobal = [];
+        let categoriaFiltroActual = 'todos';
+
+        // Función que formatea números a moneda de Argentina (Ej: 500000 -> $ 500.000)
+        function formatDinero(numero) {
+            if (!numero || isNaN(numero)) return "";
+            return new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 0 }).format(numero);
+        }
+
+        // Función Principal: Cargar y procesar datos del CSV
+        async function cargarDatosDesdeGoogle() {
+            try {
+                const respuesta = await fetch(urlPlanillaCSV);
+                const textoCSV = await respuesta.text();
+                
+                // Dividir el archivo por filas de texto
+                const filas = textoCSV.split("\n").map(f => f.trim()).filter(f => f.length > 0);
+                
+                // Procesar cada fila ignorando la cabecera (i = 0)
+                listaProductosGlobal = [];
+                for(let i = 1; i < filas.length; i++) {
+                    // Separar por tabuladores o comas según cómo lo procese la exportación de Google
+                    const columnas = filas[i].split(/,|\t/);
+                    
+                    if(columnas.length >= 5) {
+                        listaProductosGlobal.push({
+                            nombre: columnas[0]?.trim(),
+                            categoria: columnas[1]?.trim().toLowerCase(),
+                            descripcion: columnas[2]?.trim(),
+                            precioViejo: parseFloat(columnas[3]) || null,
+                            precioActual: parseFloat(columnas[4]) || 0,
+                            imagen: columnas[5]?.trim() || 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500'
+                        });
+                    }
+                }
+                
+                document.getElementById('mensaje-estado').style.display = 'none';
+                renderizarCatalogo(listaProductosGlobal);
+            } catch (error) {
+                console.error(error);
+                document.getElementById('mensaje-estado').innerText = "Ocurrió un error al cargar los productos. Volvé a intentar más tarde.";
+            }
+        }
+
+        // Renderizar las tarjetas basadas en los filtros
+        function renderizarCatalogo(productos) {
+            const contenedor = document.getElementById('contenedor-productos');
+            contenedor.innerHTML = "";
+
+            if(productos.length === 0) {
+                contenedor.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400">No encontramos productos que coincidan.</div>`;
+                return;
+            }
+
+            productos.forEach(p => {
+                // Calcular si tiene descuento visible
+                let etiquetaDescuento = "";
+                let precioViejoHtml = `<span class="text-xs text-gray-400 block opacity-0">-</span>`;
+                
+                if(p.precioViejo && p.precioViejo > p.precioActual) {
+                    const desc = Math.round(((p.precioViejo - p.precioActual) / p.precioViejo) * 100);
+                    etiquetaDescuento = `<span class="absolute top-3 left-3 bg-red-500 text-white text-[11px] font-black px-2 py-0.5 rounded shadow">-${desc}%</span>`;
+                    precioViejoHtml = `<span class="text-xs text-gray-400 line-through block">${formatDinero(p.precioViejo)}</span>`;
+                }
+
+                // Generar texto para el enlace directo de WhatsApp
+                const mensajeWa = encodeURIComponent(`Hola Griselda y Gustavo! Me interesa consultar disponibilidad del producto: ${p.nombre}`);
+
+                const tarjetaHtml = `
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition border border-gray-200 overflow-hidden relative flex flex-col justify-between">
+                        ${etiquetaDescuento}
+                        <div>
+                            <div class="w-full h-52 bg-gray-100 overflow-hidden">
+                                <img src="${p.imagen}" alt="${p.nombre}" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="text-sm font-bold text-gray-700 line-clamp-2 h-10">${p.nombre}</h4>
+                                <p class="text-xs text-gray-400 mt-1">${p.descripcion}</p>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-t border-gray-100">
+                            <div class="mb-3">
+                                ${precioViejoHtml}
+                                <span class="text-xl font-black text-red-600 block">${formatDinero(p.precioActual)}</span>
+                                <span class="text-[10px] text-gray-500 block font-medium">Efectivo / Transferencia</span>
+                            </div>
+                            <a href="https://wa.me/5491162567009?text=${mensajeWa}" target="_blank" class="w-full bg-whatsappGreen text-white text-xs font-bold text-center py-2.5 rounded-lg flex items-center justify-center gap-2 hover:bg-emerald-600 transition shadow-sm">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Consultar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                `;
+                contenedor.innerHTML += tarjetaHtml;
+            });
+        }
+
+        // Filtrar por botones de categoría
+        function filtrarCategoria(categoria) {
+            categoriaFiltroActual = categoria;
+            const botones = document.querySelectorAll('.cat-btn');
+
+            // Actualizar interfaz visual de botones activos
+            botones.forEach(b => {
+                b.classList.remove('bg-customYellow', 'text-customBlue', 'border-customYellow');
+                b.classList.add('bg-white', 'text-slate-700', 'border-gray-200');
+            });
+            event.currentTarget.classList.remove('bg-white', 'text-slate-700', 'border-gray-200');
+            event.currentTarget.classList.add('bg-customYellow', 'text-customBlue', 'border-customYellow');
+
+            aplicarFiltrosCombinados();
+        }
+
+        // Buscar productos por input de texto
+        function buscarProductos() {
+            aplicarFiltrosCombinados();
+        }
+
+        // Combina el buscador por texto + el filtro de categoría activo
+        function aplicarFiltrosCombinados() {
+            const textoBusqueda = document.getElementById('buscador').value.toLowerCase().trim();
+            
+            const productosFiltrados = listaProductosGlobal.filter(p => {
+                const coincideCategoria = (categoriaFiltroActual === 'todos' || p.categoria === categoriaFiltroActual);
+                const coincideTexto = p.nombre.toLowerCase().includes(textoBusqueda) || p.descripcion.toLowerCase().includes(textoBusqueda);
+                return coincideCategoria && coincideTexto;
+            });
+
+            renderizarCatalogo(productosFiltrados);
+        }
+
+        // Ejecutar carga automática al abrir la página
+        window.onload = cargarDatosDesdeGoogle;
+    </script>
+</body>
+</html>
