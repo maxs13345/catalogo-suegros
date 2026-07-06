@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Griselda y Gustavo - Hogar, Ocio y Más</title>
+    <!-- Importamos Montserrat con variantes ligeras y finas (300 y 400) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'], // Aplicamos la nueva tipografía a toda la web
+                        sans: ['Montserrat', 'sans-serif'], 
                     },
                     colors: {
                         customBlue: '#051126',   
@@ -25,69 +27,78 @@
             }
         }
     </script>
+    <!-- Iconos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-100 font-sans text-gray-800 antialiased">
+<body class="bg-gray-100 font-sans text-gray-800 antialiased font-light"> <!-- Agregamos font-light global para que todo sea más fino -->
 
-    <div class="bg-customBlue text-gray-400 text-xs py-2 px-4 border-b border-gray-800 hidden md:flex justify-between items-center">
+    <!-- 1. BARRA SUPERIOR -->
+    <div class="bg-customBlue text-gray-400 text-xs py-2 px-4 border-b border-gray-800 hidden md:flex justify-between items-center font-normal">
         <div class="bg-white/10 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-sm">
-            <i class="fa-solid fa-location-dot text-customYellow"></i>
-            <span class="font-medium text-[11px]">Zona Oeste, Buenos Aires, Argentina</span>
+            <i class="fa-solid fa-location-dot text-customYellow text-[11px]"></i>
+            <span class="text-[11px] font-light tracking-wide">Zona Oeste, Buenos Aires, Argentina</span>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 text-[11px]">
             <span>Seguinos en</span>
-            <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram text-base"></i></a>
-            <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook text-base"></i></a>
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
         </div>
     </div>
 
+    <!-- 2. CABECERA PRINCIPAL -->
     <header class="bg-customBlue text-white py-5 px-4 sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             
+            <!-- Logo con tipografía fina y elegante -->
             <div class="flex items-center gap-3">
-                <div class="bg-customYellow text-customBlue p-2.5 rounded-xl text-2xl font-black shadow-sm">
+                <div class="bg-customYellow text-customBlue p-2.5 rounded-xl text-xl font-bold shadow-sm">
                     <i class="fa-solid fa-bag-shopping"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-black tracking-tight leading-none text-customYellow uppercase">Griselda y Gustavo</h1>
-                    <span class="text-[10px] text-gray-400 tracking-widest uppercase font-bold block mt-1">Hogar, Ocio y Más</span>
+                    <h1 class="text-xl font-medium tracking-tight leading-none text-customYellow uppercase">Griselda y Gustavo</h1>
+                    <span class="text-[9px] text-gray-400 tracking-widest uppercase font-light block mt-1">Hogar, Ocio y Más</span>
                 </div>
             </div>
 
+            <!-- Buscador Central -->
             <div class="w-full md:w-1/2 flex shadow-sm">
-                <input type="text" id="buscador" oninput="buscarProductos()" placeholder="Buscar productos, marcas y más..." class="w-full px-4 py-2.5 rounded-l-lg text-gray-800 focus:outline-none text-sm font-medium">
+                <input type="text" id="buscador" oninput="buscarProductos()" placeholder="Buscar productos, marcas y más..." class="w-full px-4 py-2.5 rounded-l-lg text-gray-800 focus:outline-none text-sm font-light tracking-wide">
                 <button class="bg-customYellow text-customBlue px-6 rounded-r-lg font-bold hover:bg-yellow-500 transition">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-magnifying-glass text-xs"></i>
                 </button>
             </div>
 
+            <!-- Datos de Contacto Directo en Encuadres Blancos (Texto Fino) -->
             <div class="flex gap-3 text-sm w-full md:w-auto justify-center md:justify-start">
+                <!-- Tarjeta Blanca Teléfono -->
                 <div class="bg-white text-gray-800 px-4 py-2 rounded-xl shadow-sm flex items-center gap-3 border border-gray-200">
-                    <i class="fa-solid fa-phone text-blue-600 text-lg"></i>
+                    <i class="fa-solid fa-phone text-blue-600 text-base"></i>
                     <div>
-                        <p class="text-[10px] text-gray-400 font-bold uppercase leading-none">Teléfono</p>
-                        <p class="font-bold text-xs mt-0.5 whitespace-nowrap">11 1234 5678</p>
+                        <p class="text-[9px] text-gray-400 font-medium uppercase leading-none tracking-wider">Teléfono</p>
+                        <p class="font-normal text-xs mt-0.5 whitespace-nowrap tracking-tight">11 1234 5678</p>
                     </div>
                 </div>
+                <!-- Tarjeta Blanca WhatsApp -->
                 <a href="https://wa.me/5491162567009" target="_blank" class="bg-white text-gray-800 px-4 py-2 rounded-xl shadow-sm flex items-center gap-3 border border-gray-200 hover:border-whatsappGreen transition group">
-                    <i class="fa-brands fa-whatsapp text-whatsappGreen text-xl group-hover:scale-110 transition"></i>
+                    <i class="fa-brands fa-whatsapp text-whatsappGreen text-lg group-hover:scale-105 transition"></i>
                     <div>
-                        <p class="text-[10px] text-gray-400 font-bold uppercase leading-none">WhatsApp</p>
-                        <p class="font-bold text-xs mt-0.5 whitespace-nowrap">11 6256 7009</p>
+                        <p class="text-[9px] text-gray-400 font-medium uppercase leading-none tracking-wider">WhatsApp</p>
+                        <p class="font-normal text-xs mt-0.5 whitespace-nowrap tracking-tight">11 6256 7009</p>
                     </div>
                 </a>
             </div>
         </div>
     </header>
 
-    <nav class="bg-customBlue text-white border-t border-gray-800 text-xs font-bold hidden md:block">
+    <!-- 3. BARRA DE NAVEGACIÓN -->
+    <nav class="bg-customBlue text-white border-t border-gray-800 text-xs hidden md:block">
         <div class="max-w-7xl mx-auto flex items-center">
-            <div class="bg-customYellow text-customBlue px-6 py-3.5 flex items-center gap-3 cursor-pointer hover:bg-yellow-500 transition font-extrabold tracking-wide">
-                <i class="fa-solid fa-bars"></i>
+            <div class="bg-customYellow text-customBlue px-6 py-3.5 flex items-center gap-3 cursor-pointer hover:bg-yellow-500 transition font-bold tracking-wide">
+                <i class="fa-solid fa-bars text-xs"></i>
                 <span>CATEGORÍAS</span>
-                <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                <i class="fa-solid fa-chevron-down text-[9px]"></i>
             </div>
-            <div class="flex gap-8 px-8 text-gray-300">
+            <div class="flex gap-8 px-8 text-gray-300 font-light tracking-wide">
                 <a href="#" class="text-customYellow hover:text-white transition">Inicio</a>
                 <a href="#" class="hover:text-white transition">Nosotros</a>
                 <a href="#catalogo-seccion" class="hover:text-white transition">Catálogo</a>
@@ -96,17 +107,18 @@
         </div>
     </nav>
 
+    <!-- 4. BANNER PRINCIPAL -->
     <section class="bg-gradient-to-r from-customBlue to-slate-900 text-white py-16 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <div class="space-y-6">
-                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                <h2 class="text-4xl md:text-5xl font-light tracking-tight leading-tight text-gray-100">
                     Todo lo que necesitás, <br>
-                    <span class="text-customYellow">en un solo lugar</span>
+                    <span class="text-customYellow font-normal">en un solo lugar</span>
                 </h2>
-                <p class="text-gray-300 text-sm md:text-base max-w-md font-light leading-relaxed">
+                <p class="text-gray-400 text-sm md:text-base max-w-md font-light leading-relaxed tracking-wide">
                     Electrodomésticos, juegos, álbumes, figuritas y mucho más al mejor precio de Zona Oeste.
                 </p>
-                <a href="#catalogo-seccion" class="inline-block bg-customYellow text-customBlue font-black px-8 py-3.5 rounded-lg shadow-md hover:bg-yellow-500 transition text-xs uppercase tracking-wider">
+                <a href="#catalogo-seccion" class="inline-block bg-customYellow text-customBlue font-bold px-8 py-3.5 rounded-lg shadow-md hover:bg-yellow-500 transition text-xs uppercase tracking-wider">
                     Ver Catálogo
                 </a>
             </div>
@@ -117,98 +129,106 @@
         </div>
     </section>
 
+    <!-- 5. SECCIÓN CATEGORÍAS -->
     <section class="max-w-7xl mx-auto py-12 px-4" id="catalogo-seccion">
-        <h3 class="text-center text-sm font-bold mb-8 uppercase tracking-widest text-gray-500">Explorá nuestras categorías</h3>
+        <h3 class="text-center text-xs font-medium mb-8 uppercase tracking-widest text-gray-400">Explorá nuestras categorías</h3>
         
-        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 mb-12">
-            <button onclick="filtrarCategoria('todos')" id="btn-todos" class="cat-btn bg-customYellow text-customBlue p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-customYellow transition">
-                <div class="text-2xl mb-2"><i class="fa-solid fa-border-all"></i></div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 mb-12 font-normal">
+            <button onclick="filtrarCategoria('todos')" id="btn-todos" class="cat-btn bg-customYellow text-customBlue p-4 rounded-xl shadow-sm font-semibold text-xs flex flex-col items-center justify-center border border-customYellow transition">
+                <div class="text-xl mb-2"><i class="fa-solid fa-border-all"></i></div>
                 <span>Mostrar Todo</span>
             </button>
-            <button onclick="filtrarCategoria('electro')" class="cat-btn bg-white text-slate-700 p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
-                <div class="text-2xl mb-2 text-blue-600"><i class="fa-solid fa-plug"></i></div>
+            <button onclick="filtrarCategoria('electro')" class="cat-btn bg-white text-slate-600 p-4 rounded-xl shadow-sm font-medium text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
+                <div class="text-xl mb-2 text-blue-500"><i class="fa-solid fa-plug"></i></div>
                 <span>Electrodomésticos</span>
             </button>
-            <button onclick="filtrarCategoria('juegos')" class="cat-btn bg-white text-slate-700 p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
-                <div class="text-2xl mb-2 text-purple-600"><i class="fa-solid fa-dice-d20"></i></div>
+            <button onclick="filtrarCategoria('juegos')" class="cat-btn bg-white text-slate-600 p-4 rounded-xl shadow-sm font-medium text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
+                <div class="text-xl mb-2 text-purple-500"><i class="fa-solid fa-dice-d20"></i></div>
                 <span>Juegos de Mesa</span>
             </button>
-            <button onclick="filtrarCategoria('albumes')" class="cat-btn bg-white text-slate-700 p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
-                <div class="text-2xl mb-2 text-emerald-600"><i class="fa-solid fa-book-open-reader"></i></div>
+            <button onclick="filtrarCategoria('albumes')" class="cat-btn bg-white text-slate-600 p-4 rounded-xl shadow-sm font-medium text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
+                <div class="text-xl mb-2 text-emerald-500"><i class="fa-solid fa-book-open-reader"></i></div>
                 <span>Álbumes y Figuritas</span>
             </button>
-            <button onclick="filtrarCategoria('hogar')" class="cat-btn bg-white text-slate-700 p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
-                <div class="text-2xl mb-2 text-amber-600"><i class="fa-solid fa-kitchen-set"></i></div>
+            <button onclick="filtrarCategoria('hogar')" class="cat-btn bg-white text-slate-600 p-4 rounded-xl shadow-sm font-medium text-xs flex flex-col items-center justify-center border border-gray-200 hover:border-customYellow transition">
+                <div class="text-xl mb-2 text-amber-500"><i class="fa-solid fa-kitchen-set"></i></div>
                 <span>Hogar y Cocina</span>
             </button>
         </div>
 
-        <div id="mensaje-estado" class="text-center text-gray-500 font-medium py-8 text-sm">Cargando catálogo en vivo...</div>
+        <div id="mensaje-estado" class="text-center text-gray-400 font-light py-8 text-sm">Cargando catálogo en vivo...</div>
 
+        <!-- 6. CONTENEDOR DINÁMICO DEL CATÁLOGO -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" id="contenedor-productos"></div>
     </section>
 
-    <section class="bg-slate-200 py-10 px-4 text-slate-700">
+    <!-- 7. VENTAJAS LOCALES -->
+    <section class="bg-slate-200 py-10 px-4 text-slate-600">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div class="flex flex-col items-center p-4">
-                <i class="fa-solid fa-truck text-customBlue text-3xl mb-2"></i>
-                <h5 class="font-bold text-sm tracking-tight">Envíos en Zona Oeste</h5>
-                <p class="text-xs text-gray-500 mt-1 font-medium">Coordinamos la entrega de forma directa y segura.</p>
+                <i class="fa-solid fa-truck text-customBlue text-2xl mb-2"></i>
+                <h5 class="font-normal text-sm tracking-tight text-gray-800">Envíos en Zona Oeste</h5>
+                <p class="text-xs text-gray-500 mt-1 font-light tracking-wide">Coordinamos la entrega de forma directa y segura.</p>
             </div>
             <div class="flex flex-col items-center p-4">
-                <i class="fa-solid fa-credit-card text-customBlue text-3xl mb-2"></i>
-                <h5 class="font-bold text-sm tracking-tight">Medios de Pago</h5>
-                <p class="text-xs text-gray-500 mt-1 font-medium">Efectivo, Transferencia o Cuenta DNI.</p>
+                <i class="fa-solid fa-credit-card text-customBlue text-2xl mb-2"></i>
+                <h5 class="font-normal text-sm tracking-tight text-gray-800">Medios de Pago</h5>
+                <p class="text-xs text-gray-500 mt-1 font-light tracking-wide">Efectivo, Transferencia o Cuenta DNI.</p>
             </div>
             <div class="flex flex-col items-center p-4">
-                <i class="fa-solid fa-comments text-customBlue text-3xl mb-2"></i>
-                <h5 class="font-bold text-sm tracking-tight">Atención por sus Dueños</h5>
-                <p class="text-xs text-gray-500 mt-1 font-medium">Griselda y Gustavo te responden al instante.</p>
+                <i class="fa-solid fa-comments text-customBlue text-2xl mb-2"></i>
+                <h5 class="font-normal text-sm tracking-tight text-gray-800">Atención por sus Dueños</h5>
+                <p class="text-xs text-gray-500 mt-1 font-light tracking-wide">Griselda y Gustavo te responden al instante.</p>
             </div>
         </div>
     </section>
 
-    <footer class="bg-customBlue text-gray-400 py-12 px-4 text-xs">
+    <!-- 8. PIE DE PÁGINA (Footer con Tarjetas Limpias) -->
+    <footer class="bg-customBlue text-gray-400 py-12 px-4 text-xs font-light tracking-wide">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             
+            <!-- Bloque Identidad -->
             <div class="space-y-3">
-                <div class="flex items-center gap-2 text-white text-sm font-bold tracking-tight">
-                    <i class="fa-solid fa-bag-shopping text-customYellow text-base"></i> GRISELDA Y GUSTAVO
+                <div class="flex items-center gap-2 text-white text-sm font-normal tracking-tight">
+                    <i class="fa-solid fa-bag-shopping text-customYellow"></i> GRISELDA Y GUSTAVO
                 </div>
-                <p class="leading-relaxed font-medium">Tu tienda de confianza en Zona Oeste. Variedad, excelentes precios y la mejor atención de barrio.</p>
+                <p class="leading-relaxed text-gray-400">Tu tienda de confianza en Zona Oeste. Variedad, excelentes precios y la mejor atención de barrio.</p>
             </div>
 
-            <div class="bg-white text-gray-800 p-5 rounded-2xl shadow-sm space-y-3 border border-gray-200">
-                <h5 class="text-gray-900 font-extrabold text-xs uppercase tracking-wider border-b border-gray-100 pb-2">Datos de Contacto</h5>
-                <ul class="space-y-3 font-medium text-xs">
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-phone text-blue-600 text-sm"></i> 11 1234 5678</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-brands fa-whatsapp text-whatsappGreen text-base"></i> 11 6256 7009</li>
-                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-location-dot text-red-500 text-sm"></i> Zona Oeste, Buenos Aires</li>
+            <!-- Tarjeta Blanca Contacto Fina -->
+            <div class="bg-white text-gray-600 p-5 rounded-2xl shadow-sm space-y-3 border border-gray-200">
+                <h5 class="text-gray-800 font-medium text-xs uppercase tracking-wider border-b border-gray-100 pb-2">Datos de Contacto</h5>
+                <ul class="space-y-3 text-xs">
+                    <li class="flex items-center gap-2.5 font-light"><i class="fa-solid fa-phone text-blue-500 text-xs"></i> 11 1234 5678</li>
+                    <li class="flex items-center gap-2.5 font-light"><i class="fa-brands fa-whatsapp text-whatsappGreen text-sm"></i> 11 6256 7009</li>
+                    <li class="flex items-center gap-2.5 font-light"><i class="fa-solid fa-location-dot text-red-400 text-xs"></i> Zona Oeste, Buenos Aires</li>
                 </ul>
             </div>
 
-            <div class="bg-white text-gray-800 p-5 rounded-2xl shadow-sm space-y-3 border border-gray-200">
-                <h5 class="text-gray-900 font-extrabold text-xs uppercase tracking-wider border-b border-gray-100 pb-2">Nuestras Redes</h5>
-                <ul class="space-y-3 font-medium text-xs">
+            <!-- Tarjeta Blanca Redes Fina -->
+            <div class="bg-white text-gray-600 p-5 rounded-2xl shadow-sm space-y-3 border border-gray-200">
+                <h5 class="text-gray-800 font-medium text-xs uppercase tracking-wider border-b border-gray-100 pb-2">Nuestras Redes</h5>
+                <ul class="space-y-3 text-xs">
                     <li>
-                        <a href="#" class="flex items-center gap-2.5 hover:text-purple-600 transition">
-                            <i class="fa-brands fa-instagram text-pink-500 text-base"></i> @griseldaygustavo
+                        <a href="#" class="flex items-center gap-2.5 hover:text-purple-600 transition font-light">
+                            <i class="fa-brands fa-instagram text-pink-400 text-sm"></i> @griseldaygustavo
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center gap-2.5 hover:text-blue-700 transition">
-                            <i class="fa-brands fa-facebook text-blue-600 text-base"></i> Griselda y Gustavo Hogar
+                        <a href="#" class="flex items-center gap-2.5 hover:text-blue-700 transition font-light">
+                            <i class="fa-brands fa-facebook text-blue-500 text-sm"></i> Griselda y Gustavo Hogar
                         </a>
                     </li>
                 </ul>
             </div>
             
         </div>
-        <div class="max-w-7xl mx-auto text-center mt-12 pt-4 border-t border-gray-800 text-gray-500 font-medium">
+        <div class="max-w-7xl mx-auto text-center mt-12 pt-4 border-t border-gray-800 text-gray-500 font-light">
             &copy; 2026 Griselda y Gustavo - Todos los derechos reservados.
         </div>
     </footer>
 
+    <!-- SCRIPT DE CARGA DESDE GOOGLE SHEETS -->
     <script>
         const urlPlanillaCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRpIQHSkMBUWIKb9yqqwNqoSsCh-J-gAq8EYEpicrFRadWv_OAxg4k1Wi1undxOp6E6hdMQdT-W6U6i/pub?output=csv";
         
@@ -271,7 +291,7 @@
                 console.error("Error detectado:", error);
                 document.getElementById('mensaje-estado').innerHTML = `
                     <div class="text-red-600 bg-red-50 p-4 rounded-lg inline-block border border-red-200">
-                        <p class="font-bold">⚠️ Error de conexión con la base de datos.</p>
+                        <p class="font-normal text-xs">⚠️ Error de conexión con la base de datos.</p>
                     </div>
                 `;
             }
@@ -282,7 +302,7 @@
             contenedor.innerHTML = "";
 
             if(productos.length === 0) {
-                contenedor.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400 font-medium">No encontramos productos que coincidan.</div>`;
+                contenedor.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400 font-light">No encontramos productos que coincidan.</div>`;
                 return;
             }
 
@@ -292,32 +312,32 @@
                 
                 if(p.precioViejo && p.precioViejo > p.precioActual) {
                     const desc = Math.round(((p.precioViejo - p.precioActual) / p.precioViejo) * 100);
-                    etiquetaDescuento = `<span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-black px-2 py-0.5 rounded shadow-sm">-${desc}% OFF</span>`;
-                    precioViejoHtml = `<span class="text-xs text-gray-400 line-through block font-medium">${formatDinero(p.precioViejo)}</span>`;
+                    etiquetaDescuento = `<span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-medium px-2 py-0.5 rounded shadow-sm">-${desc}% OFF</span>`;
+                    precioViejoHtml = `<span class="text-xs text-gray-400 line-through block font-light">${formatDinero(p.precioViejo)}</span>`;
                 }
 
                 const mensajeWa = encodeURIComponent(`Hola Griselda y Gustavo! Me interesa consultar disponibilidad del producto: ${p.nombre}`);
 
-                // Tarjetas pulidas con bordes limpios y fuentes más estilizadas tipo Mercado Libre
+                // Tarjetas ultra limpias con grosores finos y refinados
                 const tarjetaHtml = `
                     <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 border border-gray-200 overflow-hidden relative flex flex-col justify-between group">
                         ${etiquetaDescuento}
                         <div>
                             <div class="w-full h-48 bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="${p.imagen}" alt="${p.nombre}" class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-200" onerror="this.src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500'">
+                                <img src="${p.imagen}" alt="${p.nombre}" class="w-full h-full object-contain p-2 group-hover:scale-103 transition duration-200" onerror="this.src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500'">
                             </div>
                             <div class="p-4">
-                                <h4 class="text-[13px] font-semibold text-gray-800 line-clamp-2 h-9 leading-snug tracking-tight">${p.nombre}</h4>
-                                <p class="text-[11px] text-gray-400 mt-1 font-medium line-clamp-1">${p.descripcion}</p>
+                                <h4 class="text-[13px] font-normal text-gray-800 line-clamp-2 h-9 leading-snug tracking-tight">${p.nombre}</h4>
+                                <p class="text-[11px] text-gray-400 mt-1 font-light line-clamp-1 tracking-wide">${p.descripcion}</p>
                             </div>
                         </div>
                         <div class="p-4 pt-0">
                             <div class="mb-3">
                                 ${precioViejoHtml}
-                                <span class="text-lg font-bold text-gray-900 block leading-tight tracking-tight">${formatDinero(p.precioActual)}</span>
-                                <span class="text-[10px] text-emerald-600 block font-bold mt-0.5">Mismo precio en efectivo</span>
+                                <span class="text-lg font-medium text-gray-900 block leading-tight tracking-tight">${formatDinero(p.precioActual)}</span>
+                                <span class="text-[10px] text-emerald-600 block font-normal mt-0.5 tracking-wide">Mismo precio en efectivo</span>
                             </div>
-                            <a href="https://wa.me/5491162567009?text=${mensajeWa}" target="_blank" class="w-full bg-whatsappGreen text-white text-xs font-bold text-center py-2.5 rounded-lg flex items-center justify-center gap-2 hover:bg-emerald-600 transition shadow-sm">
+                            <a href="https://wa.me/5491162567009?text=${mensajeWa}" target="_blank" class="w-full bg-whatsappGreen text-white text-xs font-normal py-2.5 rounded-lg flex items-center justify-center gap-2 hover:bg-emerald-600 transition shadow-sm tracking-wide">
                                 <i class="fa-brands fa-whatsapp text-sm"></i> Consultar por WhatsApp
                             </a>
                         </div>
@@ -333,9 +353,9 @@
 
             botones.forEach(b => {
                 b.classList.remove('bg-customYellow', 'text-customBlue', 'border-customYellow');
-                b.classList.add('bg-white', 'text-slate-700', 'border-gray-200');
+                b.classList.add('bg-white', 'text-slate-600', 'border-gray-200');
             });
-            event.currentTarget.classList.remove('bg-white', 'text-slate-700', 'border-gray-200');
+            event.currentTarget.classList.remove('bg-white', 'text-slate-600', 'border-gray-200');
             event.currentTarget.classList.add('bg-customYellow', 'text-customBlue', 'border-customYellow');
 
             aplicarFiltrosCombinados();
