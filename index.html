@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Griselda y Gustavo - Hogar, Ocio y Más</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'], // Aplicamos la nueva tipografía a toda la web
+                    },
                     colors: {
-                        customBlue: '#051126',   /* Azul oscuro de la cabecera original */
-                        customYellow: '#FFC800', /* Amarillo de los botones y acentos */
-                        whatsappGreen: '#25D366' /* Verde oficial de WhatsApp */
+                        customBlue: '#051126',   
+                        customYellow: '#FFC800', 
+                        whatsappGreen: '#25D366' 
                     }
                 }
             }
@@ -20,73 +27,71 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-100 font-sans text-gray-800">
+<body class="bg-gray-100 font-sans text-gray-800 antialiased">
 
     <div class="bg-customBlue text-gray-400 text-xs py-2 px-4 border-b border-gray-800 hidden md:flex justify-between items-center">
-        <div class="flex items-center gap-2">
+        <div class="bg-white/10 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-sm">
             <i class="fa-solid fa-location-dot text-customYellow"></i>
-            <span>Zona Oeste, Buenos Aires, Argentina</span>
+            <span class="font-medium text-[11px]">Zona Oeste, Buenos Aires, Argentina</span>
         </div>
         <div class="flex items-center gap-4">
             <span>Seguinos en</span>
-            <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram text-base"></i></a>
+            <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook text-base"></i></a>
         </div>
     </div>
 
-    <header class="bg-customBlue text-white py-4 px-4 sticky top-0 z-50 shadow-md">
+    <header class="bg-customBlue text-white py-5 px-4 sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             
             <div class="flex items-center gap-3">
-                <div class="bg-customYellow text-customBlue p-2.5 rounded-lg text-2xl font-black shadow">
+                <div class="bg-customYellow text-customBlue p-2.5 rounded-xl text-2xl font-black shadow-sm">
                     <i class="fa-solid fa-bag-shopping"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-black tracking-wider leading-none text-customYellow uppercase">Griselda y Gustavo</h1>
-                    <span class="text-[10px] text-gray-400 tracking-widest uppercase">Hogar, Ocio y Más</span>
+                    <h1 class="text-xl font-black tracking-tight leading-none text-customYellow uppercase">Griselda y Gustavo</h1>
+                    <span class="text-[10px] text-gray-400 tracking-widest uppercase font-bold block mt-1">Hogar, Ocio y Más</span>
                 </div>
             </div>
 
-            <div class="w-full md:w-1/2 flex">
-                <input type="text" id="buscador" oninput="buscarProductos()" placeholder="Buscar productos por nombre..." class="w-full px-4 py-2.5 rounded-l-lg text-gray-800 focus:outline-none text-sm">
+            <div class="w-full md:w-1/2 flex shadow-sm">
+                <input type="text" id="buscador" oninput="buscarProductos()" placeholder="Buscar productos, marcas y más..." class="w-full px-4 py-2.5 rounded-l-lg text-gray-800 focus:outline-none text-sm font-medium">
                 <button class="bg-customYellow text-customBlue px-6 rounded-r-lg font-bold hover:bg-yellow-500 transition">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
 
-            <div class="flex gap-6 text-sm">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-phone text-customYellow text-lg"></i>
+            <div class="flex gap-3 text-sm w-full md:w-auto justify-center md:justify-start">
+                <div class="bg-white text-gray-800 px-4 py-2 rounded-xl shadow-sm flex items-center gap-3 border border-gray-200">
+                    <i class="fa-solid fa-phone text-blue-600 text-lg"></i>
                     <div>
-                        <p class="text-[11px] text-gray-400 leading-none">Teléfono</p>
-                        <p class="font-bold">11 1234 5678</p>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase leading-none">Teléfono</p>
+                        <p class="font-bold text-xs mt-0.5 whitespace-nowrap">11 1234 5678</p>
                     </div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <a href="https://wa.me/5491162567009" target="_blank" class="flex items-center gap-2 hover:opacity-90">
-                        <i class="fa-brands fa-whatsapp text-whatsappGreen text-xl"></i>
-                        <div>
-                            <p class="text-[11px] text-gray-400 leading-none">WhatsApp</p>
-                            <p class="font-bold">11 6256 7009</p>
-                        </div>
-                    </a>
-                </div>
+                <a href="https://wa.me/5491162567009" target="_blank" class="bg-white text-gray-800 px-4 py-2 rounded-xl shadow-sm flex items-center gap-3 border border-gray-200 hover:border-whatsappGreen transition group">
+                    <i class="fa-brands fa-whatsapp text-whatsappGreen text-xl group-hover:scale-110 transition"></i>
+                    <div>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase leading-none">WhatsApp</p>
+                        <p class="font-bold text-xs mt-0.5 whitespace-nowrap">11 6256 7009</p>
+                    </div>
+                </a>
             </div>
         </div>
     </header>
 
-    <nav class="bg-customBlue text-white border-t border-gray-800 text-sm font-semibold hidden md:block">
+    <nav class="bg-customBlue text-white border-t border-gray-800 text-xs font-bold hidden md:block">
         <div class="max-w-7xl mx-auto flex items-center">
-            <div class="bg-customYellow text-customBlue px-6 py-3 flex items-center gap-3 cursor-pointer hover:bg-yellow-500 transition">
+            <div class="bg-customYellow text-customBlue px-6 py-3.5 flex items-center gap-3 cursor-pointer hover:bg-yellow-500 transition font-extrabold tracking-wide">
                 <i class="fa-solid fa-bars"></i>
                 <span>CATEGORÍAS</span>
-                <i class="fa-solid fa-chevron-down text-xs"></i>
+                <i class="fa-solid fa-chevron-down text-[10px]"></i>
             </div>
-            <div class="flex gap-8 px-8">
-                <a href="#" class="text-customYellow hover:text-customYellow transition">Inicio</a>
-                <a href="#" class="hover:text-customYellow transition">Nosotros</a>
-                <a href="#catalogo-seccion" class="hover:text-customYellow transition">Catálogo</a>
-                <a href="#" class="hover:text-customYellow transition">Contacto</a>
+            <div class="flex gap-8 px-8 text-gray-300">
+                <a href="#" class="text-customYellow hover:text-white transition">Inicio</a>
+                <a href="#" class="hover:text-white transition">Nosotros</a>
+                <a href="#catalogo-seccion" class="hover:text-white transition">Catálogo</a>
+                <a href="#" class="hover:text-white transition">Contacto</a>
             </div>
         </div>
     </nav>
@@ -94,14 +99,14 @@
     <section class="bg-gradient-to-r from-customBlue to-slate-900 text-white py-16 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <div class="space-y-6">
-                <h2 class="text-4xl md:text-5xl font-black leading-tight">
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
                     Todo lo que necesitás, <br>
                     <span class="text-customYellow">en un solo lugar</span>
                 </h2>
-                <p class="text-gray-300 text-base md:text-lg max-w-md">
+                <p class="text-gray-300 text-sm md:text-base max-w-md font-light leading-relaxed">
                     Electrodomésticos, juegos, álbumes, figuritas y mucho más al mejor precio de Zona Oeste.
                 </p>
-                <a href="#catalogo-seccion" class="inline-block bg-customYellow text-customBlue font-extrabold px-8 py-3.5 rounded-lg shadow-lg hover:bg-yellow-500 transition text-sm uppercase tracking-wider">
+                <a href="#catalogo-seccion" class="inline-block bg-customYellow text-customBlue font-black px-8 py-3.5 rounded-lg shadow-md hover:bg-yellow-500 transition text-xs uppercase tracking-wider">
                     Ver Catálogo
                 </a>
             </div>
@@ -113,7 +118,7 @@
     </section>
 
     <section class="max-w-7xl mx-auto py-12 px-4" id="catalogo-seccion">
-        <h3 class="text-center text-xl font-bold mb-8 uppercase tracking-wider text-gray-700">Explorá nuestras categorías</h3>
+        <h3 class="text-center text-sm font-bold mb-8 uppercase tracking-widest text-gray-500">Explorá nuestras categorías</h3>
         
         <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 mb-12">
             <button onclick="filtrarCategoria('todos')" id="btn-todos" class="cat-btn bg-customYellow text-customBlue p-4 rounded-xl shadow-sm font-bold text-xs flex flex-col items-center justify-center border border-customYellow transition">
@@ -138,104 +143,124 @@
             </button>
         </div>
 
-        <div id="mensaje-estado" class="text-center text-gray-500 font-medium py-8">Cargando catálogo en vivo...</div>
+        <div id="mensaje-estado" class="text-center text-gray-500 font-medium py-8 text-sm">Cargando catálogo en vivo...</div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 id" id="contenedor-productos">
-            </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" id="contenedor-productos"></div>
     </section>
 
-    <section class="bg-slate-200 py-8 px-4 text-slate-700">
+    <section class="bg-slate-200 py-10 px-4 text-slate-700">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div class="flex flex-col items-center p-4">
                 <i class="fa-solid fa-truck text-customBlue text-3xl mb-2"></i>
-                <h5 class="font-bold text-sm">Envíos en Zona Oeste</h5>
-                <p class="text-xs text-gray-500 mt-1">Coordinamos la entrega de forma directa y segura.</p>
+                <h5 class="font-bold text-sm tracking-tight">Envíos en Zona Oeste</h5>
+                <p class="text-xs text-gray-500 mt-1 font-medium">Coordinamos la entrega de forma directa y segura.</p>
             </div>
             <div class="flex flex-col items-center p-4">
                 <i class="fa-solid fa-credit-card text-customBlue text-3xl mb-2"></i>
-                <h5 class="font-bold text-sm">Medios de Pago</h5>
-                <p class="text-xs text-gray-500 mt-1">Efectivo, Transferencia o Cuenta DNI.</p>
+                <h5 class="font-bold text-sm tracking-tight">Medios de Pago</h5>
+                <p class="text-xs text-gray-500 mt-1 font-medium">Efectivo, Transferencia o Cuenta DNI.</p>
             </div>
             <div class="flex flex-col items-center p-4">
                 <i class="fa-solid fa-comments text-customBlue text-3xl mb-2"></i>
-                <h5 class="font-bold text-sm">Atención por sus Dueños</h5>
-                <p class="text-xs text-gray-500 mt-1">Griselda y Gustavo te responden al instante.</p>
+                <h5 class="font-bold text-sm tracking-tight">Atención por sus Dueños</h5>
+                <p class="text-xs text-gray-500 mt-1 font-medium">Griselda y Gustavo te responden al instante.</p>
             </div>
         </div>
     </section>
 
     <footer class="bg-customBlue text-gray-400 py-12 px-4 text-xs">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            
             <div class="space-y-3">
-                <div class="flex items-center gap-2 text-white text-sm font-bold">
-                    <i class="fa-solid fa-bag-shopping text-customYellow"></i> GRISELDA Y GUSTAVO
+                <div class="flex items-center gap-2 text-white text-sm font-bold tracking-tight">
+                    <i class="fa-solid fa-bag-shopping text-customYellow text-base"></i> GRISELDA Y GUSTAVO
                 </div>
-                <p class="leading-relaxed">Tu tienda de confianza en Zona Oeste. Variedad, excelentes precios y la mejor atención de barrio.</p>
+                <p class="leading-relaxed font-medium">Tu tienda de confianza en Zona Oeste. Variedad, excelentes precios y la mejor atención de barrio.</p>
             </div>
-            <div>
-                <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-xs">Contactanos</h5>
-                <ul class="space-y-2">
-                    <li><i class="fa-solid fa-phone mr-2 text-customYellow"></i> 11 1234 5678</li>
-                    <li><i class="fa-brands fa-whatsapp mr-2 text-whatsappGreen"></i> 11 6256 7009</li>
-                    <li><i class="fa-solid fa-location-dot mr-2 text-customYellow"></i> Zona Oeste, Buenos Aires</li>
+
+            <div class="bg-white text-gray-800 p-5 rounded-2xl shadow-sm space-y-3 border border-gray-200">
+                <h5 class="text-gray-900 font-extrabold text-xs uppercase tracking-wider border-b border-gray-100 pb-2">Datos de Contacto</h5>
+                <ul class="space-y-3 font-medium text-xs">
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-phone text-blue-600 text-sm"></i> 11 1234 5678</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-brands fa-whatsapp text-whatsappGreen text-base"></i> 11 6256 7009</li>
+                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-location-dot text-red-500 text-sm"></i> Zona Oeste, Buenos Aires</li>
                 </ul>
             </div>
-            <div>
-                <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-xs">Seguinos</h5>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-white"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a></li>
-                    <li><a href="#" class="hover:text-white"><i class="fa-brands fa-facebook mr-2"></i> Facebook</a></li>
+
+            <div class="bg-white text-gray-800 p-5 rounded-2xl shadow-sm space-y-3 border border-gray-200">
+                <h5 class="text-gray-900 font-extrabold text-xs uppercase tracking-wider border-b border-gray-100 pb-2">Nuestras Redes</h5>
+                <ul class="space-y-3 font-medium text-xs">
+                    <li>
+                        <a href="#" class="flex items-center gap-2.5 hover:text-purple-600 transition">
+                            <i class="fa-brands fa-instagram text-pink-500 text-base"></i> @griseldaygustavo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-2.5 hover:text-blue-700 transition">
+                            <i class="fa-brands fa-facebook text-blue-600 text-base"></i> Griselda y Gustavo Hogar
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div>
-                <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-xs">Información</h5>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-white">Sobre nosotros</a></li>
-                    <li><a href="#" class="hover:text-white">Preguntas frecuentes</a></li>
-                </ul>
-            </div>
+            
         </div>
-        <div class="max-w-7xl mx-auto text-center mt-12 pt-4 border-t border-gray-800 text-gray-500">
+        <div class="max-w-7xl mx-auto text-center mt-12 pt-4 border-t border-gray-800 text-gray-500 font-medium">
             &copy; 2026 Griselda y Gustavo - Todos los derechos reservados.
         </div>
     </footer>
 
     <script>
-        // Enlace CSV real proveído por el usuario
         const urlPlanillaCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRpIQHSkMBUWIKb9yqqwNqoSsCh-J-gAq8EYEpicrFRadWv_OAxg4k1Wi1undxOp6E6hdMQdT-W6U6i/pub?output=csv";
         
         let listaProductosGlobal = [];
         let categoriaFiltroActual = 'todos';
 
-        // Función que formatea números a moneda de Argentina (Ej: 500000 -> $ 500.000)
         function formatDinero(numero) {
             if (!numero || isNaN(numero)) return "";
             return new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 0 }).format(numero);
         }
 
-        // Función Principal: Cargar y procesar datos del CSV
+        function procesarLineaCSV(linea) {
+            let resultado = [];
+            let dentroDeComillas = false;
+            let valorActual = '';
+
+            for (let i = 0; i < linea.length; i++) {
+                let char = linea[i];
+                if (char === '"' || char === "'") {
+                    dentroDeComillas = !dentroDeComillas;
+                } else if ((char === ',' || char === '\t') && !dentroDeComillas) {
+                    resultado.push(valorActual.trim());
+                    valorActual = '';
+                } else {
+                    valorActual += char;
+                }
+            }
+            resultado.push(valorActual.trim());
+            return resultado;
+        }
+
         async function cargarDatosDesdeGoogle() {
             try {
                 const respuesta = await fetch(urlPlanillaCSV);
-                const textoCSV = await respuesta.text();
+                if (!respuesta.ok) throw new Error("Error en servidor");
                 
-                // Dividir el archivo por filas de texto
+                const textoCSV = await respuesta.text();
                 const filas = textoCSV.split("\n").map(f => f.trim()).filter(f => f.length > 0);
                 
-                // Procesar cada fila ignorando la cabecera (i = 0)
                 listaProductosGlobal = [];
+                
                 for(let i = 1; i < filas.length; i++) {
-                    // Separar por tabuladores o comas según cómo lo procese la exportación de Google
-                    const columnas = filas[i].split(/,|\t/);
+                    const columnas = procesarLineaCSV(filas[i]);
                     
-                    if(columnas.length >= 5) {
+                    if(columnas.length >= 5 && columnas[0] !== "") {
                         listaProductosGlobal.push({
-                            nombre: columnas[0]?.trim(),
-                            categoria: columnas[1]?.trim().toLowerCase(),
-                            descripcion: columnas[2]?.trim(),
-                            precioViejo: parseFloat(columnas[3]) || null,
-                            precioActual: parseFloat(columnas[4]) || 0,
-                            imagen: columnas[5]?.trim() || 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500'
+                            nombre: columnas[0].replace(/^["']|["']$/g, ''),
+                            categoria: columnas[1].toLowerCase().replace(/^["']|["']$/g, ''),
+                            descripcion: columnas[2].replace(/^["']|["']$/g, ''),
+                            precioViejo: parseFloat(columnas[3].replace(/[^0-9.]/g, '')) || null,
+                            precioActual: parseFloat(columnas[4].replace(/[^0-9.]/g, '')) || 0,
+                            imagen: columnas[5] ? columnas[5].replace(/^["']|["']$/g, '') : 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500'
                         });
                     }
                 }
@@ -243,52 +268,54 @@
                 document.getElementById('mensaje-estado').style.display = 'none';
                 renderizarCatalogo(listaProductosGlobal);
             } catch (error) {
-                console.error(error);
-                document.getElementById('mensaje-estado').innerText = "Ocurrió un error al cargar los productos. Volvé a intentar más tarde.";
+                console.error("Error detectado:", error);
+                document.getElementById('mensaje-estado').innerHTML = `
+                    <div class="text-red-600 bg-red-50 p-4 rounded-lg inline-block border border-red-200">
+                        <p class="font-bold">⚠️ Error de conexión con la base de datos.</p>
+                    </div>
+                `;
             }
         }
 
-        // Renderizar las tarjetas basadas en los filtros
         function renderizarCatalogo(productos) {
             const contenedor = document.getElementById('contenedor-productos');
             contenedor.innerHTML = "";
 
             if(productos.length === 0) {
-                contenedor.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400">No encontramos productos que coincidan.</div>`;
+                contenedor.innerHTML = `<div class="col-span-full text-center py-8 text-gray-400 font-medium">No encontramos productos que coincidan.</div>`;
                 return;
             }
 
             productos.forEach(p => {
-                // Calcular si tiene descuento visible
                 let etiquetaDescuento = "";
                 let precioViejoHtml = `<span class="text-xs text-gray-400 block opacity-0">-</span>`;
                 
                 if(p.precioViejo && p.precioViejo > p.precioActual) {
                     const desc = Math.round(((p.precioViejo - p.precioActual) / p.precioViejo) * 100);
-                    etiquetaDescuento = `<span class="absolute top-3 left-3 bg-red-500 text-white text-[11px] font-black px-2 py-0.5 rounded shadow">-${desc}%</span>`;
-                    precioViejoHtml = `<span class="text-xs text-gray-400 line-through block">${formatDinero(p.precioViejo)}</span>`;
+                    etiquetaDescuento = `<span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-black px-2 py-0.5 rounded shadow-sm">-${desc}% OFF</span>`;
+                    precioViejoHtml = `<span class="text-xs text-gray-400 line-through block font-medium">${formatDinero(p.precioViejo)}</span>`;
                 }
 
-                // Generar texto para el enlace directo de WhatsApp
                 const mensajeWa = encodeURIComponent(`Hola Griselda y Gustavo! Me interesa consultar disponibilidad del producto: ${p.nombre}`);
 
+                // Tarjetas pulidas con bordes limpios y fuentes más estilizadas tipo Mercado Libre
                 const tarjetaHtml = `
-                    <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition border border-gray-200 overflow-hidden relative flex flex-col justify-between">
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 border border-gray-200 overflow-hidden relative flex flex-col justify-between group">
                         ${etiquetaDescuento}
                         <div>
-                            <div class="w-full h-52 bg-gray-100 overflow-hidden">
-                                <img src="${p.imagen}" alt="${p.nombre}" class="w-full h-full object-cover">
+                            <div class="w-full h-48 bg-gray-50 overflow-hidden border-b border-gray-100">
+                                <img src="${p.imagen}" alt="${p.nombre}" class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-200" onerror="this.src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500'">
                             </div>
                             <div class="p-4">
-                                <h4 class="text-sm font-bold text-gray-700 line-clamp-2 h-10">${p.nombre}</h4>
-                                <p class="text-xs text-gray-400 mt-1">${p.descripcion}</p>
+                                <h4 class="text-[13px] font-semibold text-gray-800 line-clamp-2 h-9 leading-snug tracking-tight">${p.nombre}</h4>
+                                <p class="text-[11px] text-gray-400 mt-1 font-medium line-clamp-1">${p.descripcion}</p>
                             </div>
                         </div>
-                        <div class="p-4 bg-gray-50 border-t border-gray-100">
+                        <div class="p-4 pt-0">
                             <div class="mb-3">
                                 ${precioViejoHtml}
-                                <span class="text-xl font-black text-red-600 block">${formatDinero(p.precioActual)}</span>
-                                <span class="text-[10px] text-gray-500 block font-medium">Efectivo / Transferencia</span>
+                                <span class="text-lg font-bold text-gray-900 block leading-tight tracking-tight">${formatDinero(p.precioActual)}</span>
+                                <span class="text-[10px] text-emerald-600 block font-bold mt-0.5">Mismo precio en efectivo</span>
                             </div>
                             <a href="https://wa.me/5491162567009?text=${mensajeWa}" target="_blank" class="w-full bg-whatsappGreen text-white text-xs font-bold text-center py-2.5 rounded-lg flex items-center justify-center gap-2 hover:bg-emerald-600 transition shadow-sm">
                                 <i class="fa-brands fa-whatsapp text-sm"></i> Consultar por WhatsApp
@@ -300,12 +327,10 @@
             });
         }
 
-        // Filtrar por botones de categoría
         function filtrarCategoria(categoria) {
             categoriaFiltroActual = categoria;
             const botones = document.querySelectorAll('.cat-btn');
 
-            // Actualizar interfaz visual de botones activos
             botones.forEach(b => {
                 b.classList.remove('bg-customYellow', 'text-customBlue', 'border-customYellow');
                 b.classList.add('bg-white', 'text-slate-700', 'border-gray-200');
@@ -316,12 +341,10 @@
             aplicarFiltrosCombinados();
         }
 
-        // Buscar productos por input de texto
         function buscarProductos() {
             aplicarFiltrosCombinados();
         }
 
-        // Combina el buscador por texto + el filtro de categoría activo
         function aplicarFiltrosCombinados() {
             const textoBusqueda = document.getElementById('buscador').value.toLowerCase().trim();
             
@@ -334,7 +357,6 @@
             renderizarCatalogo(productosFiltrados);
         }
 
-        // Ejecutar carga automática al abrir la página
         window.onload = cargarDatosDesdeGoogle;
     </script>
 </body>
